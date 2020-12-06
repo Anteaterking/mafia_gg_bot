@@ -2,14 +2,17 @@
 Bot for Mafia.gg to facilitate semi-closed setups, etc. Written with Selenium for Python
 
 Some code for Mafia_Semi_Bot v0.5 by Anteaterking
+
 Requirements: Have Python3 on your computer, the selenium python package, and "chromedriver" (https://sites.google.com/a/chromium.org/chromedriver/downloads)
 
 BEFORE RUNNING:
+
 Open the parameter file and fill in the parameters I left blank (username/password for your bot's mafia.gg account) and consider changing some of the parameters (unless you want me to be the only privileged user of *your* bot).
 
 Make sure this parameter file, chromedriver, and the mafia_bot.py file are all in the same folder or put an explicit path to chromedriver in the parameters.
 
 TO USE:
+
 Just run "python mafia_bot.py" in a terminal from the folder it's contained in!
 
 This will open up a chromedriver browser, attempt to login to mafia.gg, and automatically open a room. From this point anyone can interact with the bot through a limited number of commands (with some commands such as !setup and !semi being restricted to just privileged users). Look through the options in parameters for what mode you want to run it in: unlisted/listed, privileged, abandon or stay in same room, etc. For example, if you just want the bot to make janitorial setups all day long, set listed to 1 and abandon to 1 with a setup text file with just Janitorial in it. That seems like a waste though.
@@ -18,6 +21,7 @@ Currently, games will inherit the last properties in terms of decks, timers, whe
 
 
 TO DO
+
 1. Commands for changing those properties
 2. Add other useful commands that people might want
 3. More bug testing
@@ -29,4 +33,5 @@ If you have comments, bugs, or suggestions, let me know!
 
 
 VERSION NOTES:
+
 v0.5 : 12/6/2020 Initial commit.
