@@ -68,7 +68,7 @@ def random_code(code_list):
         The randomly selected code to use for this game
     """
 
-    selected_code = code_list[random.randint(1, len(code_list))]  # selects a number from 1 - n (n = max players)
+    selected_code = code_list[random.randint(1, len(code_list))]  # selects a number from 1 - n (n = max possible setups)
     return selected_code
 
 
