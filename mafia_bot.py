@@ -34,16 +34,9 @@ def start_up(path,url):
     return(driver)
 
 def log_in(driver,username,password):
-    account_box = driver.find_element_by_class_name('account-box')
-    user_entry = account_box.find_elements_by_class_name('account-input')[0]
-    outerHTML = user_entry.get_attribute('outerHTML')
-    id = outerHTML[outerHTML.index('label for=')+11:][:18]
-    login = driver.find_element_by_id(id)
-    login.send_keys(username)
-    time.sleep(0.5)
-    login = driver.find_element_by_id(id[:-1]+'2')
-    login.send_keys(password)
-    login.send_keys('\n')    
+    driver.find_element_by_xpath("//input[@type='text']").send_keys(username);
+    driver.find_element_by_xpath("//input[@type='password']").send_keys(password);
+    driver.find_element_by_xpath("//button[@type='submit']").click(); 
     return()
 
 def start_room(driver,game_name='',listed=0):
@@ -60,7 +53,10 @@ def start_room(driver,game_name='',listed=0):
     submit.click()
     time.sleep(0.5)
     chat(driver,'Bot is ready!')
-    driver.find_elements_by_class_name('button')[0].click()
+    try:
+        driver.find_elements_by_class_name('button')[0].click()
+    except:
+        pass
     if pf.ABANDON==1 and pf.PRIVILEGE_REQUIRED==1:
         chat(driver,"I've gone rogue and am hosting games and abandoning them! Type !possiblities to see the different setups that I am choosing between (and hiding the results). Type !start once there are enough players and I'll start. Three !afk will initiate an afk check. Welcome to semi-closed fun! (Please report players who should be blacklisted to whomever is running this bot)")
         codes, descriptions = unpack_setups()
