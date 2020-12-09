@@ -1,13 +1,13 @@
 ######## USER PREFERENCES ######
 ### Path to chromedriver
 
-PATH = r'chromedriver.exe' 
+PATH = r'../chromedriver.exe'
 URL = r'https://mafia.gg/login'
 
 ### Path to txt file with setups. These should be in form <setup code>:<description> on each line.
 ### Turn blank if you aren't using !possibilities
 
-SETUP_PATH = r'setups.txt'
+SETUP_PATH = r'../setups.txt'
 
 ### mafia.gg username/password for the bot
 
