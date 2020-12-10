@@ -2,8 +2,6 @@ import time
 import random
 from selenium import webdriver
 import parameter_file as pf
-import logging
-logging.basicConfig(filename='app.log', filemode='w', encoding='utf-8', level=logging.INFO)
 
 ###############################
 ### Global Variables
@@ -36,12 +34,9 @@ def start_up(path,url):
     return(driver)
 
 def log_in(driver,username,password):
-    try:
-        driver.find_element_by_xpath("//input[@type='text']").send_keys(username);
-        driver.find_element_by_xpath("//input[@type='password']").send_keys(password);
-        driver.find_element_by_xpath("//button[@type='submit']").click(); 
-    except:
-        logging.error("Failed to login and find the input elements.")
+    driver.find_element_by_xpath("//input[@type='text']").send_keys(username);
+    driver.find_element_by_xpath("//input[@type='password']").send_keys(password);
+    driver.find_element_by_xpath("//button[@type='submit']").click(); 
     return()
 
 def start_room(driver,game_name='',listed=0):
@@ -61,7 +56,6 @@ def start_room(driver,game_name='',listed=0):
     try:
         driver.find_elements_by_class_name('button')[0].click()
     except:
-        logging.info('Lobby was a closed setup, no need to unplayer.')
         pass
     if pf.ABANDON==1 and pf.PRIVILEGE_REQUIRED==1:
         chat(driver,"I've gone rogue and am hosting games and abandoning them! Type !possiblities to see the different setups that I am choosing between (and hiding the results). Type !start once there are enough players and I'll start. Three !afk will initiate an afk check. Welcome to semi-closed fun! (Please report players who should be blacklisted to whomever is running this bot)")
@@ -147,20 +141,14 @@ def unpack_setups():
 
 ##actual start
 
-logging.info('Starting up driver browser.')
 driver=start_up(pf.PATH,pf.URL)
 try:
     log_in(driver,pf.USERNAME,pf.PASSWORD)
 except:
-    logging.warning('Login process failed, refreshing driver and trying again.')
     driver.refresh()
     log_in(driver,pf.USERNAME,pf.PASSWORD)
 time.sleep(0.5)
-try:
-    start_room(driver,pf.GAME_NAME,pf.LISTED)
-    logging.info('Bot has logged in and started a room')
-except Exception as e:
-    logging.error("Exception occurred while starting a room", exc_info=True)
+start_room(driver,pf.GAME_NAME,pf.LISTED)
 
 
 while 1>0:
