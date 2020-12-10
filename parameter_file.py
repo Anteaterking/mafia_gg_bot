@@ -11,8 +11,8 @@ SETUP_PATH = r'setups.txt'
 
 ### mafia.gg username/password for the bot
 
-USERNAME = 'YOUR BOT USERNAME HERE'
-PASSWORD = 'YOUR BOT PASSWORD HERE'
+USERNAME = 'CultBot'
+PASSWORD = 'jasons'
 
 ### What you want the lobby name to be
 
