@@ -6,6 +6,7 @@ Bot for Mafia.gg to facilitate semi-closed setups, etc. Written with Selenium fo
 1. Install `conda`: https://docs.anaconda.com/anaconda/install/
 2. (Optional) Install `PyCharm` IDE: https://www.jetbrains.com/help/pycharm/installation-guide.html
 3. Install `pre-commit`: https://pre-commit.com/#install
+4. In IDE, set `src` as the `Sources Root` of your project.
 
 
 #### Pre-Commit
