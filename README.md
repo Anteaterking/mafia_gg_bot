@@ -1,6 +1,23 @@
 # mafia_gg_bot
 Bot for Mafia.gg to facilitate semi-closed setups, etc. Written with Selenium for Python
 
+#### Initial Setup
+
+1. Install `conda`: https://docs.anaconda.com/anaconda/install/
+2. (Optional) Install `PyCharm` IDE: https://www.jetbrains.com/help/pycharm/installation-guide.html
+3. Install `pre-commit`: https://pre-commit.com/#install
+
+
+#### Pre-Commit
+This repo is configured to use pre-commit to manage code hygiene.  Please configure pre-commit before pushing code to
+origin.
+
+Instructions: (https://pre-commit.com/)
+1. Install: `brew install pre-commit` or `conda install -c conda-forge pre-commit` or `pip install pre-commit`
+2. (Optional) Setup automatic commit hook: `pre-commit install`
+3. Manual lint: `pre-commit run --all-files` (multiple times until all steps pass)
+
+
 Some code for Mafia_Semi_Bot v0.5 by Anteaterking
 
 Requirements: Have Python3 on your computer, the selenium python package, and "chromedriver" (https://sites.google.com/a/chromium.org/chromedriver/downloads)
