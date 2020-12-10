@@ -1,6 +1,24 @@
 # mafia_gg_bot
 Bot for Mafia.gg to facilitate semi-closed setups, etc. Written with Selenium for Python
 
+#### Initial Setup
+
+1. Install `conda`: https://docs.anaconda.com/anaconda/install/
+2. (Optional) Install `PyCharm` IDE: https://www.jetbrains.com/help/pycharm/installation-guide.html
+3. Install `pre-commit`: https://pre-commit.com/#install
+4. In IDE, set `src` as the `Sources Root` of your project.
+
+
+#### Pre-Commit
+This repo is configured to use pre-commit to manage code hygiene.  Please configure pre-commit before pushing code to
+origin.
+
+Instructions: (https://pre-commit.com/)
+1. Install: `brew install pre-commit` or `conda install -c conda-forge pre-commit` or `pip install pre-commit`
+2. (Optional) Setup automatic commit hook: `pre-commit install`
+3. Manual lint: `pre-commit run --all-files` (multiple times until all steps pass)
+
+
 Some code for Mafia_Semi_Bot v0.5 by Anteaterking
 
 Requirements: Have Python3 on your computer, the selenium python package, and "chromedriver" (https://sites.google.com/a/chromium.org/chromedriver/downloads)
@@ -28,6 +46,9 @@ TO DO
 4. Right now everything is very dependent on the UI staying very similar for things like button placement, etc. But I just learned selenium today so...to be improved.
 5. Xinde requested being able to read in a pastebin of setups.
 6. 10% of the time my trick for getting login correct doesn't work because of inconsistent ids. This ### can be fixed by just rerunning but would be nice to fix.
+7. Setup conda env -Xinde
+8. Add typehints -Xinde
+9. Setup pytest framework -Xinde
 
 If you have comments, bugs, or suggestions, let me know!
 
