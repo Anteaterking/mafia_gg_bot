@@ -46,6 +46,9 @@ TO DO
 4. Right now everything is very dependent on the UI staying very similar for things like button placement, etc. But I just learned selenium today so...to be improved.
 5. Xinde requested being able to read in a pastebin of setups.
 6. 10% of the time my trick for getting login correct doesn't work because of inconsistent ids. This ### can be fixed by just rerunning but would be nice to fix.
+7. Setup conda env -Xinde
+8. Add typehints -Xinde
+9. Setup pytest framework -Xinde
 
 If you have comments, bugs, or suggestions, let me know!
 
