@@ -6,6 +6,7 @@ dependencies:
   - python==3.7.9
   - pip==20.3.1
   - pip:
-    - --index-url=https://pypi.python.org/simple
+    - --extra-index-url=https://pypi.python.org/simple
+    - --extra-index-url=https://pypi.anaconda.org/anaconda/simple
     - pyyaml==5.3.1
     - selenium==3.141.0
