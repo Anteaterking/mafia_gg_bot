@@ -20,3 +20,8 @@ exclude = '''
                      # the root of the project
 )
 '''
+
+# pytest.ini
+[tool.pytest.ini_options]
+python_files = "test_*.py *_tests.py"
+addopts = "--disable-pytest-warnings"

@@ -1,0 +1,11 @@
+name: mafia_gg_bot
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python==3.7.9
+  - pip==20.3.1
+  - pip:
+    - --index-url=https://pypi.python.org/simple
+    - pyyaml==5.3.1
+    - selenium==3.141.0
