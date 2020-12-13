@@ -18,6 +18,9 @@ Instructions: (https://pre-commit.com/)
 2. (Optional) Setup automatic commit hook: `pre-commit install`
 3. Manual lint: `pre-commit run --all-files` (multiple times until all steps pass)
 
+#### Build
+Run `./scripts/build.sh` to build the prod environment.
+Run `./scripts/build-dev.sh` to build the dev/test environment.
 
 Some code for Mafia_Semi_Bot v0.5 by Anteaterking
 
