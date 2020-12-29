@@ -27,7 +27,7 @@ class Client:
     def username(self) -> str:
         return self._username
 
-    def _get_headers(self) -> Dict:
+    def _headers(self) -> Dict:
         if self.__cookie:
             return {
                 "Cookie": self.__cookie,
@@ -38,7 +38,7 @@ class Client:
     def _get(self, url: str, **kwargs) -> requests.Response:
         return requests.get(
             url=f"{self.base_url}{url}",
-            headers=self._get_headers(),
+            headers=self._headers(),
             **kwargs,
         )
 
@@ -47,7 +47,7 @@ class Client:
             json = {}
         return requests.post(
             url=f"{self.base_url}{url}",
-            headers=self._get_headers(),
+            headers=self._headers(),
             json=json,
             **kwargs,
         )
@@ -57,7 +57,7 @@ class Client:
             json = {}
         return requests.put(
             url=f"{self.base_url}{url}",
-            headers=self._get_headers(),
+            headers=self._headers(),
             json=json,
             **kwargs,
         )
@@ -65,7 +65,7 @@ class Client:
     def _delete(self, url: str, **kwargs) -> requests.Response:
         return requests.delete(
             url=f"{self.base_url}{url}",
-            headers=self._get_headers(),
+            headers=self._headers(),
             **kwargs,
         )
 
@@ -89,4 +89,8 @@ class Client:
         self._username = None
 
     def list_rooms(self) -> RoomsResponse:
-        pass  # TODO
+        url = "/rooms"
+        raw_response = self._get(
+            url=url,
+        )
+        return _deserialize_response(raw_response.json(), RoomsResponse)
